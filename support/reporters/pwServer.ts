@@ -30,7 +30,7 @@ class MyReporter implements Reporter {
     const resp = await ctx.put(`${serverURL}/api/result/upload`, {
       multipart: {
         file: {
-          name: testResults.fileName,
+          name: 'report.zip',
           mimeType: "application/zip",
           buffer: buffer,
         },
