@@ -23,8 +23,8 @@ class MyReporter implements Reporter {
     const testResults = this.config.reporter.find((r) => r[0] === "blob")[1];
     const testResultPath = path.join(
       process.cwd(),
-      testResults.outputDir,
-      testResults.fileName
+      'blob-report',
+      'report.zip'
     );
     const buffer = await fs.readFile(testResultPath);
     const resp = await ctx.put(`${serverURL}/api/result/upload`, {
