@@ -1,6 +1,6 @@
-import { expect } from "@playwright/test";
+import test, { expect } from "@playwright/test";
 import { AppPage } from "../abstractClasses";
-import { step } from "../../misc/reporters/step";
+import { step } from "../../support/reporters/step";
 
 export class ContactUs extends AppPage {
   public pagePath = "/contact";
@@ -31,5 +31,9 @@ export class ContactUs extends AppPage {
     await this.emailInput.fill(options.email);
     await this.messageInput.fill(options.message);
     await this.submitButton.click();
+    // await test.info().attach("Submited info in Contact Us form", {
+    //   body: JSON.stringify(options, null, 2),
+    //   contentType: 'application/json'
+    // });
   }
 }

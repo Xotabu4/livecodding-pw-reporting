@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 import { AppPage } from "../abstractClasses";
-import { step } from "../../misc/reporters/step";
+import { step } from "../../support/reporters/step";
 
 export class SignUp extends AppPage {
     public pagePath = '/register';

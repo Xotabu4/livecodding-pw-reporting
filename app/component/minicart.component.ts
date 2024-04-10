@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 import { Component } from "../abstractClasses";
-import { step } from "../../misc/reporters/step";
+import { step } from "../../support/reporters/step";
 
 export class MiniCart extends Component {
     private proceedToCheckoutButton = this.page.getByRole('button', { name: 'Proceed To Checkout' });

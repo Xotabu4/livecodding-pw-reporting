@@ -1,5 +1,5 @@
 import { expect, type Page } from "@playwright/test";
-import { step } from "../misc/reporters/step";
+import { step } from "../support/reporters/step";
 
 export abstract class PageHolder {
   constructor(protected page: Page) {}

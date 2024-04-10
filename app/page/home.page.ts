@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import { AppPage } from "../abstractClasses";
 import { Header } from "../component/header.component";
-import { step } from "../../misc/reporters/step";
+import { step } from "../../support/reporters/step";
 
 export class Home extends AppPage {
   public pagePath = "/";

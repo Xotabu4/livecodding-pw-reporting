@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 import { Component } from "../../../abstractClasses";
-import { step } from "../../../../misc/reporters/step";
+import { step } from "../../../../support/reporters/step";
 
 export class Review extends Component {
     starRating = (star: number) => this.page.locator(`.react-stars [data-index="${star}"] .fa-star`);

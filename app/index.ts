@@ -1,3 +1,4 @@
+import test from "@playwright/test";
 import { API } from "../api";
 import { PageHolder } from "./abstractClasses";
 import { AccountDetails } from "./page/account/details.page";
@@ -24,6 +25,10 @@ export class Application extends PageHolder {
   async headlessLogin(data: { email: string; password: string }) {
     const token = (await this.api.auth.login(data)).token;
     await this.setTokenToLocalStorage(token);
+    // await test.info().attach("Credentials used for headless login", {
+    //   body: JSON.stringify(data, null, 2),
+    //   contentType: "application/json",
+    // });
   }
 
   async setTokenToLocalStorage(token: string) {

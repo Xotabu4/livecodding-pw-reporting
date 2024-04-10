@@ -8,7 +8,11 @@ export const test = baseTest.extend<
     user: { userModel: UserCreateRequest; createdUser: UserCreatedResponse };
   } & { app: Application }
 >({
-  app: async ({ page }, use) => {
+  app: async ({ browser, page }, use) => {
+    // test.info().annotations.push({
+    //   type: "Browser",
+    //   description: `${browser.browserType().name()} ${browser.version()}`,
+    // });
     const app = new Application(page);
     await use(app);
   },

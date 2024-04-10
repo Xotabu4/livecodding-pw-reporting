@@ -3,7 +3,7 @@ import { AppPage } from "../../abstractClasses";
 import { Header } from "../../component/header.component";
 import { MiniCart } from "../../component/minicart.component";
 import { Review } from "./component/review.component";
-import { step } from "../../../misc/reporters/step";
+import { step } from "../../../support/reporters/step";
 
 export class Product extends AppPage {
     public pagePath = '/product';
