@@ -9,10 +9,10 @@ export const test = baseTest.extend<
   } & { app: Application }
 >({
   app: async ({ browser, page }, use) => {
-    // test.info().annotations.push({
-    //   type: "Browser",
-    //   description: `${browser.browserType().name()} ${browser.version()}`,
-    // });
+    test.info().annotations.push({
+      type: "Browser",
+      description: `${browser.browserType().name()} ${browser.version()}`,
+    });
     const app = new Application(page);
     await use(app);
   },

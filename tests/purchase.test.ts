@@ -1,6 +1,7 @@
 import { test } from '../fixtures';
 
-test('logged in user can buy a product', async ({ app, user }) => {  
+test('logged in user can buy a product', async ({ app, user }) => {
+  await app.home.header.openShop();  
   await app.shop.openProductDetailsByName('CHERRY TOMATOES');
   await app.product.addToBag();
   await app.accountDetails.miniCart.placeOrder();
@@ -9,6 +10,7 @@ test('logged in user can buy a product', async ({ app, user }) => {
 
 test('logged in user can purchase multiple items', async ({ app, user }) => {
   // Item #1
+  await app.home.header.openShop();
   await app.shop.openProductDetailsByName('CHERRY TOMATOES');
   await app.product.addToBag();
   await app.home.open();

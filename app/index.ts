@@ -25,10 +25,10 @@ export class Application extends PageHolder {
   async headlessLogin(data: { email: string; password: string }) {
     const token = (await this.api.auth.login(data)).token;
     await this.setTokenToLocalStorage(token);
-    // await test.info().attach("Credentials used for headless login", {
-    //   body: JSON.stringify(data, null, 2),
-    //   contentType: "application/json",
-    // });
+    await test.info().attach("Credentials used for headless login", {
+      body: JSON.stringify(data, null, 2),
+      contentType: "application/json",
+    });
   }
 
   async setTokenToLocalStorage(token: string) {

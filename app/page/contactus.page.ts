@@ -20,7 +20,7 @@ export class ContactUs extends AppPage {
     await expect(this.submitButton).toBeVisible();
   }
 
-  @step()
+  @step('Submit contact us form with data')
   async submitContactUsForm(options: {
     fullName: string;
     email: string;
@@ -31,9 +31,9 @@ export class ContactUs extends AppPage {
     await this.emailInput.fill(options.email);
     await this.messageInput.fill(options.message);
     await this.submitButton.click();
-    // await test.info().attach("Submited info in Contact Us form", {
-    //   body: JSON.stringify(options, null, 2),
-    //   contentType: 'application/json'
-    // });
+    await test.info().attach("Submited info in Contact Us form", {
+      body: JSON.stringify(options, null, 2),
+      contentType: 'application/json'
+    });
   }
 }
